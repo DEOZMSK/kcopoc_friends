@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import { useMemo, useState, type CSSProperties } from "react";
 
 type HeroGradientStyle = CSSProperties & {
-  "--x": string;
-  "--y": string;
+  [key: `--${string}`]: string | number;
 };
 
 const heroVariants = {
@@ -21,11 +20,10 @@ export default function Hero({ telegramLink }: HeroProps) {
   const [cursorPosition, setCursorPosition] = useState({ x: 50, y: 50 });
 
   const gradientStyle = useMemo<HeroGradientStyle>(
-    () =>
-      ({
-        "--x": `${cursorPosition.x}%`,
-        "--y": `${cursorPosition.y}%`
-      }) as HeroGradientStyle,
+    () => ({
+      "--x": `${cursorPosition.x}%`,
+      "--y": `${cursorPosition.y}%`
+    }),
     [cursorPosition]
   );
 
