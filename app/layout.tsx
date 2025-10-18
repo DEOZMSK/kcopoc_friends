@@ -1,42 +1,56 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Jura, Manrope, Rubik_Glitch } from "next/font/google";
 
-const manrope = Manrope({
-  subsets: ["cyrillic", "latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-manrope"
-});
+const siteTitle = "mr.Kcopoc — консультации";
+const siteDescription =
+  "Начни своё дело из дома. Помогаю собрать систему — сайт, бот и витрину без бюджета и опыта.";
+const siteUrl = "https://systema-samozapuska.example";
 
-const jura = Jura({
-  subsets: ["cyrillic", "latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-jura"
-});
+const openGraphSvg = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+    <defs>
+      <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#FFD580" />
+        <stop offset="100%" stop-color="#C7FFDB" />
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="630" fill="#111827" />
+    <rect width="1200" height="630" fill="url(#gradient)" opacity="0.35" />
+    <text x="80" y="280" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#F6F3ED">
+      mr.Kcopoc
+    </text>
+    <text x="80" y="350" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="52" font-weight="600" fill="#C7FFDB">
+      консультации
+    </text>
+    <text x="80" y="430" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="30" fill="#E5E7EB" opacity="0.9">
+      Начни своё дело из дома. Помогаю собрать систему — сайт, бот и витрину
+    </text>
+    <text x="80" y="470" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="30" fill="#E5E7EB" opacity="0.85">
+      без бюджета и опыта.
+    </text>
+  </svg>
+`;
 
-const rubikGlitch = Rubik_Glitch({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-rubik-glitch"
-});
+const openGraphImage = `data:image/svg+xml,${encodeURIComponent(openGraphSvg)}`;
+
+const faviconDataUri =
+  "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23111827%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22central%22 font-size=%2218%22 fill=%22%23E5E7EB%22>K</text></svg>";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://systema-samozapuska.example"),
-  title: "Система Самозапуска — Манифест взаимной экономики",
-  description:
-    "Начни своё дело из дома. Помогаю собрать систему — сайт, бот и витрину без бюджета и опыта.",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
   openGraph: {
-    title: "Система Самозапуска — Манифест взаимной экономики",
-    description:
-      "Начни своё дело из дома. Сайт, бот, витрина — без бюджета и опыта.",
-    url: "https://systema-samozapuska.example",
-    siteName: "Система Самозапуска",
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: "mr.Kcopoc",
     images: [
       {
-        url: "/images/og-image.png",
+        url: openGraphImage,
         width: 1200,
         height: 630,
-        alt: "Система Самозапуска — Манифест взаимной экономики"
+        alt: siteTitle
       }
     ],
     locale: "ru_RU",
@@ -44,16 +58,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Система Самозапуска — Манифест взаимной экономики",
-    description:
-      "Начни своё дело из дома. Сайт, бот, витрина — без бюджета и опыта.",
-    images: ["/images/og-image.png"],
+    title: siteTitle,
+    description: siteDescription,
+    images: [openGraphImage],
     creator: "@artemiy_xoros"
   },
-  icons: {
-    icon: "/favicon.ico"
-  },
-  manifest: "/manifest.json"
+  icons: [
+    {
+      rel: "icon",
+      url: faviconDataUri
+    }
+  ],
+  themeColor: "#111827"
 };
 
 export default function RootLayout({
@@ -62,14 +78,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="ru"
-      className={`${manrope.variable} ${jura.variable} ${rubikGlitch.variable}`}
-    >
+    <html lang="ru">
       <body className="font-sans">
-        <div className="relative overflow-hidden">
-          {children}
-        </div>
+        <div className="relative overflow-hidden">{children}</div>
       </body>
     </html>
   );

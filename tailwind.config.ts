@@ -15,13 +15,44 @@ const config: Config = {
         mint: "#C7FFDB"
       },
       fontFamily: {
-        sans: ["var(--font-manrope)", "Manrope", "sans-serif"],
-        display: ["var(--font-jura)", "Jura", "sans-serif"],
-        glitch: ["var(--font-rubik-glitch)", "Rubik Glitch", "cursive"],
-        mono: ["JetBrains Mono", "monospace"]
+        sans: [
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          '"Helvetica Neue"',
+          "Arial",
+          "sans-serif"
+        ],
+        display: [
+          "ui-rounded",
+          '"Segoe UI"',
+          "system-ui",
+          "-apple-system",
+          '"Helvetica Neue"',
+          "sans-serif"
+        ],
+        glitch: [
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Monaco",
+          '"Courier New"',
+          "monospace"
+        ],
+        mono: [
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Monaco",
+          '"Courier New"',
+          "monospace"
+        ]
       },
       backgroundImage: {
-        "gradient-soft-future": "radial-gradient(circle at 20% 20%, rgba(255,213,128,0.35), transparent 45%), radial-gradient(circle at 80% 0%, rgba(199,255,219,0.25), transparent 55%), linear-gradient(135deg, #0f0f0f 0%, #1f1f22 100%)"
+        "gradient-soft-future":
+          "radial-gradient(circle at 20% 20%, rgba(255,213,128,0.35), transparent 45%), radial-gradient(circle at 80% 0%, rgba(199,255,219,0.25), transparent 55%), linear-gradient(135deg, #0f0f0f 0%, #1f1f22 100%)"
       },
       boxShadow: {
         glow: "0 0 25px rgba(255,213,128,0.3)",
