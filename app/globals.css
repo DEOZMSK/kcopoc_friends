@@ -53,6 +53,43 @@
   .mobile-cta {
     @apply fixed bottom-5 inset-x-4 z-40 block md:hidden;
   }
+
+  .logo-wordmark {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding-left: 0.65rem;
+    padding-right: 1.1rem;
+    border-radius: 9999px;
+    background: linear-gradient(120deg, rgba(255, 213, 128, 0.75), rgba(199, 255, 219, 0.85));
+    -webkit-mask-image: linear-gradient(120deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1));
+    mask-image: linear-gradient(120deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    font-weight: 700;
+    text-shadow: 0 2px 18px rgba(255, 213, 128, 0.35);
+  }
+
+  .logo-wordmark::before {
+    content: "✹";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 0.5rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, rgba(255, 213, 128, 0.9), rgba(199, 255, 219, 0.9));
+    color: #1f1f22;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    text-shadow: none;
+  }
 }
 
 @keyframes softFuturePulse {

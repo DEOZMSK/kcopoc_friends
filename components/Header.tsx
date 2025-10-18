@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 
 const headerVariants = {
   hidden: { opacity: 0, y: -10 },
@@ -31,9 +32,7 @@ export default function Header() {
     >
       <div className="flex w-full max-w-5xl items-center justify-between rounded-full border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-xl">
         <div className="flex items-center gap-3">
-          <span className="font-display text-sm uppercase tracking-[0.35em] text-mint">
-            Система Самозапуска
-          </span>
+          <Logo />
           <span className="hidden text-xs text-sand/70 md:inline">
             Манифест взаимной экономики 2026
           </span>
