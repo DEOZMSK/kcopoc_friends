@@ -1,9 +1,9 @@
-import CallToAction from "@/components/CallToAction";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Manifest from "@/components/Manifest";
-import SectionIntro from "@/components/SectionIntro";
-import SectionMovement from "@/components/SectionMovement";
+import CallToAction from "../components/CallToAction";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Manifest from "../components/Manifest";
+import SectionIntro from "../components/SectionIntro";
+import SectionMovement from "../components/SectionMovement";
 
 const TELEGRAM_FALLBACK = "https://t.me/your_telegram_username";
 
