@@ -1,58 +1,9 @@
-# Система Самозапуска — одностраничный манифест
+# kcopoc_friends
 
-Современный одностраничный сайт-манифест о взаимной экономике и запуске своего дела из дома. Проект создан на Next.js 14 с Tailwind CSS и Framer Motion и готов к деплою на Vercel.
+This repository has been reset to a minimal state so it can be safely deleted or rebuilt from scratch.
 
-## 🚀 Стек
+## What was done
+- Removed all previous project files from version control.
+- Added a `.gitignore` to prevent temporary files (like `node_modules`) from being committed again.
 
-- Next.js 14 (App Router)
-- React 18
-- Tailwind CSS 3
-- Framer Motion 11
-- TypeScript 5
-
-## 📦 Установка и запуск
-
-```bash
-npm install
-npm run dev
-```
-
-Сайт будет доступен по адресу [http://localhost:3000](http://localhost:3000).
-
-## 🧱 Структура проекта
-
-```
-/app
-  layout.tsx
-  page.tsx
-/components
-  CallToAction.tsx
-  Header.tsx
-  Hero.tsx
-  Logo.tsx
-  Manifest.tsx
-  SectionIntro.tsx
-  SectionMovement.tsx
-```
-
-Все визуальные эффекты реализованы средствами CSS и React: фавикон и изображения Open Graph генерируются на лету в `layout.tsx`, логотип и фон Hero созданы градиентами без статических файлов.
-
-## 🧩 Переменные окружения
-
-Создайте файл `.env.local` и укажите ссылку на личный Telegram:
-
-```
-NEXT_PUBLIC_TELEGRAM_LINK=https://t.me/your_telegram_username
-```
-
-## 🧾 Сборка и деплой
-
-1. `npm run build`
-2. `npm run start` — локальная проверка production-сборки
-3. `vercel --prod` — публикация на Vercel
-4. Обновите `NEXT_PUBLIC_TELEGRAM_LINK` перед деплоем
-5. Проверьте предпросмотр ссылки в соцсетях — Open Graph карточка формируется динамически из SVG без статических файлов
-
-## 📄 Лицензия
-
-Проект доступен под лицензией MIT.
+If you need to remove the repository entirely on GitHub, you can now do so without leftover tracked files getting in the way.

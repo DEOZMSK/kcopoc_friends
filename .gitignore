@@ -1,10 +1,12 @@
-node_modules
-.next
-out
+# Ignore dependencies and build outputs
+node_modules/
+.next/
+dist/
+.env*
+.DS_Store
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-dist
-.env*
-.DS_Store
+.pnpm-debug.log*
