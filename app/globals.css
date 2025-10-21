@@ -2,7 +2,7 @@
   color-scheme: dark;
   background-color: #05070b;
   font-feature-settings: "liga" 1, "kern" 1, "clig" 1;
-  --font-body: "Exo 2", "Inter", "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-body: "Unbounded", "Manrope", "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
 *,
@@ -24,7 +24,7 @@ body {
   padding: clamp(3rem, 7vw, 6rem) 0;
   background: #05070b;
   color: #f5f4f1;
-  font-family: var(--font-body), "Inter", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-family: var(--font-body), "Manrope", "Segoe UI", "Helvetica Neue", sans-serif;
   position: relative;
   overflow-x: hidden;
 }
