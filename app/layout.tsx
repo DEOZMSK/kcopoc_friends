@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 
-const manrope = Manrope({
+const exo2 = Exo_2({
   subsets: ["latin", "latin-ext", "cyrillic"],
   display: "swap",
-  weight: [400, 500, 600, 700, 800],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-body"
 });
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ru" className={`${manrope.className} ${manrope.variable}`}>
+    <html lang="ru" className={`${exo2.className} ${exo2.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );
