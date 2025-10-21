@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Onest } from "next/font/google";
+import { Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 
-const onest = Onest({
-  subsets: ["latin", "cyrillic"],
+const manrope = Manrope({
+  subsets: ["latin", "latin-ext", "cyrillic"],
   display: "swap",
-  weight: [400, 500, 600, 700],
+  weight: [400, 500, 600, 700, 800],
   variable: "--font-body"
 });
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ru" className={`${onest.className} ${onest.variable}`}>
+    <html lang="ru" className={`${manrope.className} ${manrope.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );
