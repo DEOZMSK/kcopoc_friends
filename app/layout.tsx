@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Unbounded } from "next/font/google";
+import { Playfair_Display, Unbounded } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 
@@ -8,6 +8,13 @@ const unbounded = Unbounded({
   display: "swap",
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-body"
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin", "latin-ext", "cyrillic"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-vogue"
 });
 
 export const metadata: Metadata = {
@@ -31,7 +38,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ru" className={`${unbounded.className} ${unbounded.variable}`}>
+    <html lang="ru" className={`${unbounded.className} ${unbounded.variable} ${playfair.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );

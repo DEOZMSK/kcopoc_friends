@@ -82,7 +82,9 @@ export default function Page() {
       <div className="page__content">
         <header className="hero">
           <span className="hero__label">Авторская система</span>
-          <h1 className="hero__title">Запусти своё имя как обложку Vogue</h1>
+          <h1 className="hero__title">
+            Запусти своё имя как обложку <span className="hero__title-logo">VOGUE</span>
+          </h1>
           <p className="hero__lede">
             Я — Артемий. Собираю сообщество честных запусков, где твой опыт становится брендом, а твой голос звучит
             смело и без фальши. Всё адаптировано под мобильный ритм — включайся и действуй.
