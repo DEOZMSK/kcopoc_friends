@@ -1,3 +1,6 @@
+import Image from "next/image";
+import heroPortrait from "../photo.jpg";
+
 const coverStories = [
   {
     kicker: "Манифест",
@@ -67,99 +70,110 @@ const editorialNotes = [
 export default function Page() {
   return (
     <main className="page">
-      <header className="hero">
-        <span className="hero__label">Авторская система</span>
-        <h1 className="hero__title">Запусти своё имя как обложку Vogue</h1>
-        <p className="hero__lede">
-          Я — Артемий. Собираю сообщество честных запусков, где твой опыт становится брендом, а твой голос звучит
-          смело и без фальши. Всё адаптировано под мобильный ритм — включайся и действуй.
-        </p>
-        <div className="hero__cta">
-          <a className="button" href="https://t.me/BAPHbl" target="_blank" rel="noopener noreferrer">
-            Написать в Telegram
+      <figure className="hero-media">
+        <Image
+          src={heroPortrait}
+          alt="Портрет Артемия — основателя сообщества честных запусков"
+          fill
+          priority
+          sizes="(max-width: 960px) 100vw, 960px"
+        />
+      </figure>
+      <div className="page__content">
+        <header className="hero">
+          <span className="hero__label">Авторская система</span>
+          <h1 className="hero__title">Запусти своё имя как обложку Vogue</h1>
+          <p className="hero__lede">
+            Я — Артемий. Собираю сообщество честных запусков, где твой опыт становится брендом, а твой голос звучит
+            смело и без фальши. Всё адаптировано под мобильный ритм — включайся и действуй.
+          </p>
+          <div className="hero__cta">
+            <a className="button" href="https://t.me/BAPHbl" target="_blank" rel="noopener noreferrer">
+              Написать в Telegram
+            </a>
+            <span className="button-note">Ответ в течение 24 часов</span>
+          </div>
+        </header>
+
+        <section className="cover-grid" aria-label="Обложки нашего сообщества">
+          {coverStories.map((story, index) => (
+            <article key={index} className={`cover-card tone-${story.tone}`}>
+              <span className="cover-card__kicker">{story.kicker}</span>
+              <h2 className="cover-card__title">{story.title}</h2>
+              <p className="cover-card__copy">{story.copy}</p>
+            </article>
+          ))}
+        </section>
+
+        <section className="atelier">
+          <div className="atelier__window">
+            <h2>Мастерская запуска</h2>
+            <p>
+              Работаем слоями: стратегия, визуальная подача, продажа. Каждый блок — как отдельное окно в модном журнале,
+              чтобы ты мог пролистывать прогресс с телефона.
+            </p>
+          </div>
+          <div className="atelier__panels">
+            {atelierScenes.map((scene, index) => (
+              <article key={index} className="panel">
+                <h3>{scene.title}</h3>
+                <p>{scene.copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="ritual">
+          <div className="ritual__steps">
+            <h2>Ритуал запуска</h2>
+            <ol>
+              {ritualSteps.map((step, index) => (
+                <li key={index}>{step}</li>
+              ))}
+            </ol>
+          </div>
+          <div className="ritual__investment">
+            <h3>Инвестиции</h3>
+            <ul>
+              {investment.map((item, index) => (
+                <li key={index}>
+                  <span className="investment__label">{item.label}</span>
+                  <span className="investment__amount">{item.amount}</span>
+                  <span className="investment__detail">{item.detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="editorial">
+          <div className="editorial__headline">
+            <span>Редакционный взгляд</span>
+            <h2>Личная история вместо стандартного курса</h2>
+          </div>
+          <div className="editorial__notes">
+            {editorialNotes.map((note, index) => (
+              <article key={index}>
+                <h3>{note.heading}</h3>
+                <p>{note.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <footer className="footer">
+          <div>
+            <h2>Готов сделать первый кадр?</h2>
+            <p>
+              Напиши мне коротко, чем живёшь и чего хочешь достичь. Мы соберём персональный план, который поместится в твой
+              телефон и удержит фокус.
+            </p>
+          </div>
+          <a className="button button--dark" href="https://t.me/BAPHbl" target="_blank" rel="noopener noreferrer">
+            Telegram @BAPHbl
           </a>
-          <span className="button-note">Ответ в течение 24 часов</span>
-        </div>
-      </header>
-
-      <section className="cover-grid" aria-label="Обложки нашего сообщества">
-        {coverStories.map((story, index) => (
-          <article key={index} className={`cover-card tone-${story.tone}`}>
-            <span className="cover-card__kicker">{story.kicker}</span>
-            <h2 className="cover-card__title">{story.title}</h2>
-            <p className="cover-card__copy">{story.copy}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="atelier">
-        <div className="atelier__window">
-          <h2>Мастерская запуска</h2>
-          <p>
-            Работаем слоями: стратегия, визуальная подача, продажа. Каждый блок — как отдельное окно в модном журнале,
-            чтобы ты мог пролистывать прогресс с телефона.
-          </p>
-        </div>
-        <div className="atelier__panels">
-          {atelierScenes.map((scene, index) => (
-            <article key={index} className="panel">
-              <h3>{scene.title}</h3>
-              <p>{scene.copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="ritual">
-        <div className="ritual__steps">
-          <h2>Ритуал запуска</h2>
-          <ol>
-            {ritualSteps.map((step, index) => (
-              <li key={index}>{step}</li>
-            ))}
-          </ol>
-        </div>
-        <div className="ritual__investment">
-          <h3>Инвестиции</h3>
-          <ul>
-            {investment.map((item, index) => (
-              <li key={index}>
-                <span className="investment__label">{item.label}</span>
-                <span className="investment__amount">{item.amount}</span>
-                <span className="investment__detail">{item.detail}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="editorial">
-        <div className="editorial__headline">
-          <span>Редакционный взгляд</span>
-          <h2>Личная история вместо стандартного курса</h2>
-        </div>
-        <div className="editorial__notes">
-          {editorialNotes.map((note, index) => (
-            <article key={index}>
-              <h3>{note.heading}</h3>
-              <p>{note.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <footer className="footer">
-        <div>
-          <h2>Готов сделать первый кадр?</h2>
-          <p>
-            Напиши мне коротко, чем живёшь и чего хочешь достичь. Мы соберём персональный план, который поместится в твой
-            телефон и удержит фокус.
-          </p>
-        </div>
-        <a className="button button--dark" href="https://t.me/BAPHbl" target="_blank" rel="noopener noreferrer">
-          Telegram @BAPHbl
-        </a>
-      </footer>
+        </footer>
+      </div>
     </main>
   );
 }
