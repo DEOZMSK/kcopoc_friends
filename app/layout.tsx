@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Unbounded } from "next/font/google";
+import { Playfair_Display, Noto_Serif } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 
-const unbounded = Unbounded({
+const bodySerif = Noto_Serif({
   subsets: ["latin", "latin-ext", "cyrillic"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "700"],
   variable: "--font-body"
 });
 
@@ -14,7 +14,7 @@ const playfair = Playfair_Display({
   subsets: ["latin", "latin-ext", "cyrillic"],
   display: "swap",
   weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-vogue"
+  variable: "--font-heading"
 });
 
 export const metadata: Metadata = {
@@ -38,7 +38,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ru" className={`${unbounded.className} ${unbounded.variable} ${playfair.variable}`}>
+    <html
+      lang="ru"
+      className={`${bodySerif.className} ${bodySerif.variable} ${playfair.variable}`}
+    >
       <body className="antialiased">{children}</body>
     </html>
   );
