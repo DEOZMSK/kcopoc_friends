@@ -94,6 +94,27 @@ p {
   object-position: center;
 }
 
+@media (max-width: 720px) {
+  body {
+    padding: 0;
+  }
+
+  .page {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .hero-media {
+    min-height: 70svh;
+  }
+
+  .hero-media::after {
+    height: clamp(3rem, 22vw, 7rem);
+  }
+}
+
 .hero {
   display: grid;
   gap: 1.4rem;
